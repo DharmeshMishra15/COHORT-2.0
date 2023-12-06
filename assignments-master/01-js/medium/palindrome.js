@@ -4,7 +4,29 @@
 */
 
 function isPalindrome(str) {
+  str=str.toLowerCase();
+  str=str.replace(/[^\w\s]|_/g, "");
+  str=str.split(" ").join("");
+
+  console.log(str);
+
+  let length=str.length;
+
+  let s=0;
+  let e=length-1;
+
+  while(s<=e)
+  {
+    if(str.charAt(s)!==str.charAt(e))
+    {
+      return false;
+    }
+    s++;
+    e--;
+  }
   return true;
 }
+
+console.log(isPalindrome("Dharmesh"));
 
 module.exports = isPalindrome;
